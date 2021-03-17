@@ -1,0 +1,13 @@
+all: main
+
+main: hello-world.o  main.o
+	g++ -Wall -o main hello-world.o main.o
+
+main.o: main.cpp
+	g++ -c -Wall main.cpp
+
+hello-world.o: hello-world.cpp
+	g++ -c -Wall hello-world.cpp
+
+clean:
+	del *o
